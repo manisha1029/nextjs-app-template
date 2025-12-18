@@ -1,14 +1,13 @@
 'use client'
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { AppDispatch } from '@/src/redux/store';
+import { useAppDispatch, useAppSelector } from '@/src/redux/hooks';
 import TextInput from '@/src/components/ui/TextInput';
 
 function Page() {
     // Variables.
-    const dispatch = useDispatch<AppDispatch>();
-    const userState = useSelector(state=> state);
+    const dispatch = useAppDispatch();
+    const select = useAppSelector((state) => state);
 
     // States.
     const [name, setName] = useState('')

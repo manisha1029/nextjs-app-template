@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import clsx from "clsx";
+
+import { cn } from "@/src/utils/utils";
 
 interface ClassNamesProps {
     wrapper?: string;
@@ -36,7 +37,7 @@ function TextInput({
     const [showPass, setShowPass] = useState(false)
     return (
         <div className={`space-y-1 ${wrapperClass}`}>
-            <label className={clsx('text-sm font-medium text-gray-700', labelClass)}>{label}</label>
+            <label className={cn('text-sm font-medium text-gray-700', labelClass)}>{label}</label>
             <div className="relative">
                 <input
                     type={showPass ? 'text' : type}
@@ -44,7 +45,7 @@ function TextInput({
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
-                    className={clsx('w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500', inputClass)}
+                    className={cn('w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500', inputClass)}
                 />
                 {type === 'password' && <div className='absolute right-4 top-2'  onClick={() => setShowPass(!showPass)}> {showPass ? <Eye /> : <EyeOff />}</div>}
             </div>
