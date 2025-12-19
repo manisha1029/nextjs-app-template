@@ -1,1 +1,15 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary-hover: var(--primary-hover);
+    --color-secondary: var(--secondary);
+}
+
+:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --primary-foreground: #ffffff;
+    --primary-hover: #1d4ed8;
+}
